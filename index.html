@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Буквена Таблиця Шульте</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Буквена Таблиця Шульте</h1>
+        
+        <div class="main-content">
+            <div class="game-area">
+                <div class="current-letter">
+                    <span>Знайдіть: </span><span id="target-letter"></span>
+                </div>
+                
+                <div id="schulte-table" class="schulte-table"></div>
+            </div>
+            
+            <div class="control-panel">
+                <div class="control-group">
+                    <label>Алфавіт:</label>
+                    <div class="select-wrapper">
+                        <select id="alphabet-select">
+                            <option value="ukrainian" selected>Український</option>
+                            <option value="english">Англійський</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label>Розмір:</label>
+                    <div class="select-wrapper">
+                        <select id="table-size">
+                            <option value="3">3×3</option>
+                            <option value="4">4×4</option>
+                            <option value="5" selected>5×5</option>
+                            <option value="6">6×6</option>
+                            <option value="7">7×7</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="control-group checkbox-group">
+                    <input type="checkbox" id="color-mode" class="custom-checkbox">
+                    <label for="color-mode">Кольоровий режим</label>
+                </div>
+                
+                <button id="generate-btn" class="btn generate-btn">ЗГЕНЕРУВАТИ</button>
+                <button id="start-btn" class="btn start-btn">СТАРТ</button>
+                <button id="stop-btn" class="btn stop-btn">СТОП</button>
+                
+                <div class="timer-display">
+                    <div class="timer">
+                        <span id="minutes">00</span>:<span id="seconds">00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Results popup removed -->
+        
+        <div id="history" class="history">
+            <h2>Історія результатів</h2>
+            <div id="history-empty">Історія порожня</div>
+            <table id="history-table" class="history-table hidden">
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Алфавіт</th>
+                        <th>Розмір</th>
+                        <th>Час</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body">
+                    <!-- History entries will be added here -->
+                </tbody>
+            </table>
+            <button id="clear-history-btn" class="clear-history-btn">ОБНУЛИТИ ІСТОРІЮ</button>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
